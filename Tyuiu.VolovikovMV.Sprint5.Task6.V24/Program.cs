@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tyuiu.VolovikovMV.Sprint5.Task5.V6.Lib;
+using Tyuiu.VolovikovMV.Sprint5.Task6.V24.Lib;
+using System.IO;
 
-namespace Tyuiu.VolovikovMV.Sprint5.Task5.V6
+namespace Tyuiu.VolovikovMV.Sprint5.Task6.V24
 {
     class Program
     {
@@ -15,29 +16,31 @@ namespace Tyuiu.VolovikovMV.Sprint5.Task5.V6
             Console.Title = "Спринт #5 | Выполнил: Воловиков М. В. | АСОиУБ-23-3";
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #5                                                               *");
-            Console.WriteLine("* Тема: Чтение набора данных из текстового файла                          *");
-            Console.WriteLine("* Задание #5                                                              *");
-            Console.WriteLine("* Вариант #6                                                              *");
+            Console.WriteLine("* Тема: Обработка текстовых файлов                                        *");
+            Console.WriteLine("* Задание #6                                                              *");
+            Console.WriteLine("* Вариант #24                                                             *");
             Console.WriteLine("* Выполнил: Воловиков Михаил Васильевич | АСОиУБ-23-3                     *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
-            Console.WriteLine("* Дан файл С:\\DataSprint5\\InPutDataFileTask5V7.txt (файл взять из       *");
-            Console.WriteLine("* архива согласно вашему варианту. Создать папку в ручную                 *");
-            Console.WriteLine("* С:\\DataSprint5\\ и скопировать в неё файл) в котором есть набор целых  *");
-            Console.WriteLine("* значений. Найти cреднее значение всех вещественных чисел в файле.       *");
-            Console.WriteLine("* Полученный результат вывести на консоль. У вещественных значений        *");
-            Console.WriteLine("* округлить до трёх знаков после запятой.                                 *");
+            Console.WriteLine("* Дан файл С:/DataSprint5/InPutDataFileTask6V24.txt (файл взять из архива *");
+            Console.WriteLine("* согласно вашему варианту. Создать папку в ручную С:/DataSprint5/ и      *");
+            Console.WriteLine("* скопировать в неё файл) в котором есть вещественное значение. Найти     *");
+            Console.WriteLine("* количество пятизначных чисел в заданной строке.                         *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
-            string path = @"C:\DataSprint5\InPutDataFileTask5V6.txt";
-            Console.WriteLine("Файл: " + path);
+
+            string path = @"C:\Sprint5\InPutDataFileTask6V24.txt";
+
+            Console.WriteLine("Данные находятся в файле: " + path);
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
-            var result = ds.LoadFromDataFile(path);
-            Console.WriteLine(result);
+
+            int res = ds.LoadFromDataFile(path);
+
+            Console.WriteLine("Количество пятизначных чисел: " + res);
             Console.ReadKey();
         }
     }
