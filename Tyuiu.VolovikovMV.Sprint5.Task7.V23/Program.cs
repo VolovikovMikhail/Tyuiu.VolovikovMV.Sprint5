@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tyuiu.VolovikovMV.Sprint5.Task6.V24.Lib;
 using System.IO;
+using Tyuiu.VolovikovMV.Sprint5.Task7.V23.Lib;
 
-namespace Tyuiu.VolovikovMV.Sprint5.Task6.V24
+namespace Tyuiu.VolovikovMV.Sprint5.Task7.V23
 {
     class Program
     {
@@ -16,31 +16,34 @@ namespace Tyuiu.VolovikovMV.Sprint5.Task6.V24
             Console.Title = "Спринт #5 | Выполнил: Воловиков М. В. | АСОиУБ-23-3";
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #5                                                               *");
-            Console.WriteLine("* Тема: Обработка текстовых файлов                                        *");
-            Console.WriteLine("* Задание #6                                                              *");
-            Console.WriteLine("* Вариант #24                                                             *");
+            Console.WriteLine("* Тема: Добавление к решению итоговых проектов по спринту                 *");
+            Console.WriteLine("* Задание #7                                                              *");
+            Console.WriteLine("* Вариант #23                                                             *");
             Console.WriteLine("* Выполнил: Воловиков Михаил Васильевич | АСОиУБ-23-3                     *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
-            Console.WriteLine("* Дан файл С:/DataSprint5/InPutDataFileTask6V24.txt (файл взять из архива *");
-            Console.WriteLine("* согласно вашему варианту. Создать папку в ручную С:/DataSprint5/ и      *");
-            Console.WriteLine("* скопировать в неё файл) в котором есть вещественное значение. Найти     *");
-            Console.WriteLine("* количество пятизначных чисел в заданной строке.                         *");
+            Console.WriteLine("* Написать програму, которая вычисляет данные по формуле, сохраняет файл  *");
+            Console.WriteLine("* и печатает их на экран.                                                 *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
+            string path = @"C:\DataSprint5\InPutDataFileTask7V23.txt";
 
-            string path = @"C:\DataSprint5\InPutDataFileTask6V24.txt";
-
-            Console.WriteLine("Данные находятся в файле: " + path);
+            Console.WriteLine("Данные находятся в файле: " + path); 
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
+            pathSaveFile = ds.LoadDataAndSave(path);
+            Console.WriteLine(pathSaveFile);
 
-            int res = ds.LoadFromDataFile(path);
+            Console.WriteLine("Cтрока без русских символов: ");
+            string[] lines = File.ReadAllLines(pathSaveFile);
+            foreach (var line in lines)
+            {
+                Console.WriteLine(line);
+            }
 
-            Console.WriteLine("Количество пятизначных чисел: " + res);
             Console.ReadKey();
         }
     }
